@@ -1,0 +1,35 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<main id=" main" class="main">
+    <div class="container " style="margin-left:350px;margin-top:200px;max-width:1160px">
+        <div class="row">
+            <div class="col-md-5">
+
+
+                <div class="project-info-box">
+                    <p><b>Category:</b> @Model.Name</p>
+
+
+                </div><!-- / project-info-box -->
+                @foreach(var item in Model.Products)
+                {
+                    @foreach (var img in item.ProductImages)
+                    {
+                <div class="col-md-7">
+                    <p><b>Product count:</b> @item.Name</p>
+                    <p><b>Created date:</b> @item.CreatedDate</p>
+                    <img style="witdh:200px;height:200px;" src="~/img/@img.Name" alt="Product img" class="rounded">
+                    <div class="project-info-box">
+                        
+                    </div><!-- / project-info-box -->
+                </div><!-- / column -->
+                }
+                }
+                        <a asp-action="Index" class="btn btn-success">Back</a>
+            </div>
+        </div>
+</main>
+
